@@ -1,0 +1,15 @@
+/home/xxx/Documents/Projeto/sistema-gestao-estudos/src/api/HelloWorld/bin/Debug/net9.0/HelloWorld
+/home/xxx/Documents/Projeto/sistema-gestao-estudos/src/api/HelloWorld/bin/Debug/net9.0/HelloWorld.deps.json
+/home/xxx/Documents/Projeto/sistema-gestao-estudos/src/api/HelloWorld/bin/Debug/net9.0/HelloWorld.runtimeconfig.json
+/home/xxx/Documents/Projeto/sistema-gestao-estudos/src/api/HelloWorld/bin/Debug/net9.0/HelloWorld.dll
+/home/xxx/Documents/Projeto/sistema-gestao-estudos/src/api/HelloWorld/bin/Debug/net9.0/HelloWorld.pdb
+/home/xxx/Documents/Projeto/sistema-gestao-estudos/src/api/HelloWorld/obj/Debug/net9.0/HelloWorld.GeneratedMSBuildEditorConfig.editorconfig
+/home/xxx/Documents/Projeto/sistema-gestao-estudos/src/api/HelloWorld/obj/Debug/net9.0/HelloWorld.AssemblyInfoInputs.cache
+/home/xxx/Documents/Projeto/sistema-gestao-estudos/src/api/HelloWorld/obj/Debug/net9.0/HelloWorld.AssemblyInfo.cs
+/home/xxx/Documents/Projeto/sistema-gestao-estudos/src/api/HelloWorld/obj/Debug/net9.0/HelloWorld.csproj.CoreCompileInputs.cache
+/home/xxx/Documents/Projeto/sistema-gestao-estudos/src/api/HelloWorld/obj/Debug/net9.0/HelloWorld.sourcelink.json
+/home/xxx/Documents/Projeto/sistema-gestao-estudos/src/api/HelloWorld/obj/Debug/net9.0/HelloWorld.dll
+/home/xxx/Documents/Projeto/sistema-gestao-estudos/src/api/HelloWorld/obj/Debug/net9.0/refint/HelloWorld.dll
+/home/xxx/Documents/Projeto/sistema-gestao-estudos/src/api/HelloWorld/obj/Debug/net9.0/HelloWorld.pdb
+/home/xxx/Documents/Projeto/sistema-gestao-estudos/src/api/HelloWorld/obj/Debug/net9.0/HelloWorld.genruntimeconfig.cache
+/home/xxx/Documents/Projeto/sistema-gestao-estudos/src/api/HelloWorld/obj/Debug/net9.0/ref/HelloWorld.dll

@@ -1,0 +1,73 @@
+/* Estiliza o HTML e o BODY para remover margens e preenchimentos padrão, 
+   ocupando toda a altura da tela e centralizando o conteúdo */
+body, html {
+    margin: 0; /* Remove a margem padrão */
+    padding: 0; /* Remove o preenchimento padrão */
+    height: 100%; /* Garante que ocupem 100% da altura da tela */
+    font-family: Arial, sans-serif; /* Define a fonte padrão para o texto */
+    display: flex; /* Usa o modelo de layout flexível */
+    justify-content: center; /* Centraliza os itens horizontalmente */
+    align-items: center; /* Centraliza os itens verticalmente */
+    background: url('../img/biblioteca.jpg') no-repeat center center fixed; /* Define uma imagem de fundo */
+    background-size: cover; /* Faz a imagem cobrir toda a área do elemento */
+}
+
+/* Estiliza o contêiner principal de login */
+.login-container {
+    background-color: rgba(0, 0, 0, 0.8); /* Define um fundo preto com transparência */
+    padding: 20px; /* Adiciona um espaço interno ao redor do conteúdo */
+    border-radius: 10px; /* Arredonda os cantos do contêiner */
+    width: 90%; /* Define a largura do contêiner como 90% do elemento pai */
+    max-width: 400px; /* Define uma largura máxima de 400px */
+    text-align: center; /* Centraliza o texto e os elementos filhos */
+    color: white; /* Define a cor do texto como branca */
+}
+
+/* Estiliza o título dentro do contêiner de login */
+.login-container h1 {
+    font-size: 2em; /* Define o tamanho da fonte para 2 vezes o tamanho padrão */
+    margin-bottom: 20px; /* Adiciona espaço abaixo do título */
+}
+
+/* Estiliza os campos de entrada de e-mail e senha */
+.login-container input[type="email"],
+.login-container input[type="password"] {
+    width: 100%; /* Faz os inputs ocuparem 100% da largura do contêiner */
+    padding: 10px; /* Adiciona espaço interno nos inputs */
+    margin: 10px 0; /* Adiciona espaço entre os inputs */
+    border: none; /* Remove a borda padrão */
+    border-radius: 5px; /* Arredonda os cantos dos inputs */
+    background-color: #555; /* Define a cor de fundo dos inputs */
+    color: white; /* Define a cor do texto dentro dos inputs */
+}
+
+/* Estiliza o botão de envio (submit) */
+.login-container input[type="submit"] {
+    width: 100%; /* Faz o botão ocupar toda a largura do contêiner */
+    padding: 10px; /* Adiciona espaço interno no botão */
+    margin: 20px 0; /* Adiciona espaço acima e abaixo do botão */
+    border: none; /* Remove a borda padrão */
+    border-radius: 5px; /* Arredonda os cantos do botão */
+    background-color: #007bff; /* Define a cor de fundo azul */
+    color: white; /* Define a cor do texto como branco */
+    font-size: 1em; /* Define o tamanho da fonte para 1 vez o padrão */
+    cursor: pointer; /* Altera o cursor para uma mão ao passar por cima */
+}
+
+/* Estiliza os links dentro do contêiner de login */
+.login-container a {
+    color: #ccc; /* Define a cor do texto do link como cinza claro */
+    text-decoration: none; /* Remove o sublinhado padrão */
+    font-size: 0.9em; /* Define o tamanho da fonte ligeiramente menor */
+}
+
+/* Adiciona sublinhado ao link ao passar o mouse */
+.login-container a:hover {
+    text-decoration: underline; /* Adiciona sublinhado ao link */
+}
+
+/* Estiliza o texto da senha esquecida */
+.login-container .forgot-password {
+    text-align: right; /* Alinha o texto à direita */
+    margin-top: -10px; /* Ajusta a posição para cima com margem negativa */
+}
