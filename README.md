@@ -33,7 +33,7 @@ O Sistema de Gestão de Estudos é uma aplicação web projetada para ajudar est
 
 - **Back-end:** C#, .NET Core, Entity Framework.
 - **Front-end:** JavaScript, HTML, CSS, Bootstrap.
-- **Banco de Dados:** SQL Server.
+- **Banco de Dados:** mySQL.
 - **API REST:** Para integração de funcionalidades adicionais (ex.: envio de e-mails).
 - **Controle de Versão:** Git, com repositório no GitHub.
 - **Testes:** Xunit ou NUnit.
