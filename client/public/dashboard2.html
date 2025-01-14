@@ -1,0 +1,566 @@
+<html lang="en">
+ <head>
+  <meta charset="utf-8"/>
+  <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+  <title>
+   Your Listings
+  </title>
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" rel="stylesheet"/>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&amp;display=swap" rel="stylesheet"/>
+  <style>
+   body {
+            font-family: 'Inter', sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f5f5f5;
+            color: #333;
+        }
+        .container {
+            display: flex;
+            padding: 20px;
+        }
+        .header {
+            width: 100%;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            background-color: #fff;
+            padding: 10px 20px;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+        }
+        .header img {
+            height: 40px;
+        }
+        .header .search-bar {
+            flex-grow: 1;
+            margin: 0 20px;
+            display: flex;
+            align-items: center;
+            background-color: #f0f0f0;
+            border-radius: 20px;
+            padding: 5px 10px;
+        }
+        .header .search-bar input {
+            border: none;
+            background: none;
+            outline: none;
+            flex-grow: 1;
+            padding: 5px 10px;
+        }
+        .header .search-bar i {
+            color: #888;
+        }
+        .header .profile {
+            display: flex;
+            align-items: center;
+        }
+        .header .profile img {
+            height: 40px;
+            border-radius: 50%;
+            margin-left: 10px;
+        }
+        .sidebar {
+            width: 250px;
+            background-color: #fff;
+            padding: 20px;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+            margin-right: 20px;
+        }
+        .sidebar .profile-info {
+            display: flex;
+            align-items: center;
+            margin-bottom: 20px;
+        }
+        .sidebar .profile-info img {
+            height: 60px;
+            border-radius: 10px;
+            margin-right: 10px;
+        }
+        .sidebar .profile-info .details {
+            display: flex;
+            flex-direction: column;
+        }
+        .sidebar .profile-info .details .name {
+            font-weight: 600;
+            font-size: 18px;
+        }
+        .sidebar .profile-info .details .rating {
+            display: flex;
+            align-items: center;
+            font-size: 14px;
+            color: #888;
+        }
+        .sidebar .profile-info .details .rating i {
+            color: #f5c518;
+            margin-right: 5px;
+        }
+        .sidebar .wallet {
+            display: flex;
+            justify-content: space-between;
+            margin-bottom: 20px;
+        }
+        .sidebar .wallet .item {
+            background-color: #f0f0f0;
+            padding: 10px;
+            border-radius: 10px;
+            text-align: center;
+            flex-grow: 1;
+            margin-right: 10px;
+        }
+        .sidebar .wallet .item:last-child {
+            margin-right: 0;
+        }
+        .sidebar .wallet .item .amount {
+            font-weight: 600;
+            font-size: 16px;
+        }
+        .sidebar .wallet .item .label {
+            font-size: 12px;
+            color: #888;
+        }
+        .sidebar .menu {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+        }
+        .sidebar .menu .item {
+            display: flex;
+            align-items: center;
+            padding: 10px 0;
+            cursor: pointer;
+        }
+        .sidebar .menu .item i {
+            margin-right: 10px;
+            color: #888;
+        }
+        .sidebar .menu .item.active {
+            font-weight: 600;
+        }
+        .sidebar .menu .item .badge {
+            background-color: #f0f0f0;
+            padding: 5px 10px;
+            border-radius: 10px;
+            font-size: 12px;
+            margin-left: auto;
+        }
+        .content {
+            flex-grow: 1;
+            background-color: #fff;
+            padding: 20px;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+        }
+        .content .title {
+            font-size: 24px;
+            font-weight: 600;
+            margin-bottom: 10px;
+        }
+        .content .subtitle {
+            font-size: 14px;
+            color: #888;
+            margin-bottom: 20px;
+        }
+        .content .heatmap {
+            display: flex;
+            flex-direction: column;
+            margin-bottom: 20px;
+        }
+        .content .heatmap .header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 10px;
+        }
+        .content .heatmap .header .tabs {
+            display: flex;
+        }
+        .content .heatmap .header .tabs .tab {
+            padding: 5px 10px;
+            border-radius: 10px;
+            background-color: #f0f0f0;
+            margin-right: 10px;
+            cursor: pointer;
+        }
+        .content .heatmap .header .tabs .tab.active {
+            background-color: #333;
+            color: #fff;
+        }
+        .content .heatmap .header .actions {
+            display: flex;
+            align-items: center;
+        }
+        .content .heatmap .header .actions i {
+            margin-right: 10px;
+            cursor: pointer;
+        }
+        .content .heatmap .grid {
+            display: grid;
+            grid-template-columns: repeat(7, 1fr);
+            gap: 5px;
+        }
+        .content .heatmap .grid .cell {
+            width: 100%;
+            padding-top: 100%;
+            background-color: #e0e0e0;
+            position: relative;
+        }
+        .content .heatmap .grid .cell.active {
+            background-color: #333;
+        }
+        .content .heatmap .grid .cell::after {
+            content: '';
+            display: block;
+            padding-top: 100%;
+        }
+        .content .heatmap .grid .cell span {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            font-size: 12px;
+            color: #fff;
+        }
+        .content .stats {
+            display: flex;
+            justify-content: space-between;
+            margin-bottom: 20px;
+        }
+        .content .stats .item {
+            background-color: #f0f0f0;
+            padding: 20px;
+            border-radius: 10px;
+            flex-grow: 1;
+            margin-right: 20px;
+            text-align: center;
+        }
+        .content .stats .item:last-child {
+            margin-right: 0;
+        }
+        .content .stats .item .value {
+            font-size: 24px;
+            font-weight: 600;
+            margin-bottom: 10px;
+        }
+        .content .stats .item .label {
+            font-size: 14px;
+            color: #888;
+        }
+        .content .pie-chart {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            margin-bottom: 20px;
+        }
+        .content .pie-chart img {
+            width: 100%;
+            max-width: 300px;
+        }
+        .content .details {
+            display: flex;
+            justify-content: space-between;
+        }
+        .content .details .item {
+            background-color: #f0f0f0;
+            padding: 20px;
+            border-radius: 10px;
+            flex-grow: 1;
+            margin-right: 20px;
+            text-align: center;
+        }
+        .content .details .item:last-child {
+            margin-right: 0;
+        }
+        .content .details .item .value {
+            font-size: 24px;
+            font-weight: 600;
+            margin-bottom: 10px;
+        }
+        .content .details .item .label {
+            font-size: 14px;
+            color: #888;
+        }
+        @media (max-width: 768px) {
+            .container {
+                flex-direction: column;
+            }
+            .sidebar {
+                width: 100%;
+                margin-right: 0;
+                margin-bottom: 20px;
+            }
+            .content {
+                width: 100%;
+            }
+            .content .stats {
+                flex-direction: column;
+            }
+            .content .stats .item {
+                margin-right: 0;
+                margin-bottom: 20px;
+            }
+            .content .details {
+                flex-direction: column;
+            }
+            .content .details .item {
+                margin-right: 0;
+                margin-bottom: 20px;
+            }
+        }
+  </style>
+ </head>
+ <body>
+  <div class="header">
+   <img alt="Avito logo" src="https://placehold.co/100x40"/>
+   <div class="search-bar">
+    <input placeholder="Search by listings" type="text"/>
+    <i class="fas fa-search">
+    </i>
+   </div>
+   <div class="profile">
+    <img alt="Profile picture" src="https://placehold.co/40x40"/>
+   </div>
+  </div>
+  <div class="container">
+   <div class="sidebar">
+    <div class="profile-info">
+     <img alt="Store logo" src="https://placehold.co/60x60"/>
+     <div class="details">
+      <div class="name">
+       re:Store
+      </div>
+      <div class="rating">
+       <i class="fas fa-star">
+       </i>
+       4.9 - 857 reviews
+      </div>
+     </div>
+    </div>
+    <div class="wallet">
+     <div class="item">
+      <div class="amount">
+       $780
+      </div>
+      <div class="label">
+       78 bonuses
+      </div>
+     </div>
+     <div class="item">
+      <div class="amount">
+       $3,480
+      </div>
+      <div class="label">
+       for 30 days
+      </div>
+     </div>
+    </div>
+    <ul class="menu">
+     <li class="item active">
+      <i class="fas fa-list">
+      </i>
+      Your listings
+     </li>
+     <li class="item">
+      <i class="fas fa-check-circle">
+      </i>
+      Active
+     </li>
+     <li class="item">
+      <i class="fas fa-times-circle">
+      </i>
+      Inactive
+     </li>
+     <li class="item">
+      <i class="fas fa-file-alt">
+      </i>
+      Templates
+     </li>
+     <li class="item">
+      <i class="fas fa-shopping-cart">
+      </i>
+      Orders
+      <span class="badge">
+       2
+      </span>
+     </li>
+     <li class="item">
+      <i class="fas fa-chart-line">
+      </i>
+      Analytics
+     </li>
+     <li class="item">
+      <i class="fas fa-users">
+      </i>
+      Clients
+     </li>
+     <li class="item">
+      <i class="fas fa-dollar-sign">
+      </i>
+      Paid services
+     </li>
+     <li class="item">
+      <i class="fas fa-file-invoice-dollar">
+      </i>
+      Finances and documents
+     </li>
+     <li class="item">
+      <i class="fas fa-user-cog">
+      </i>
+      Staff
+     </li>
+     <li class="item">
+      <i class="fas fa-cog">
+      </i>
+      Profile and settings
+     </li>
+    </ul>
+    <button class="pro-support">
+     Pro Support
+    </button>
+   </div>
+   <div class="content">
+    <div class="title">
+     Your listings
+    </div>
+    <div class="subtitle">
+     10 140 active - Last update on Dec 11 at 15:11
+    </div>
+    <div class="heatmap">
+     <div class="header">
+      <div class="tabs">
+       <div class="tab active">
+        Day
+       </div>
+       <div class="tab">
+        Week
+       </div>
+       <div class="tab">
+        Month
+       </div>
+       <div class="tab">
+        Year
+       </div>
+      </div>
+      <div class="actions">
+       <i class="fas fa-file-excel">
+       </i>
+       <i class="fas fa-file-pdf">
+       </i>
+       <i class="fas fa-print">
+       </i>
+       <i class="fas fa-cog">
+       </i>
+      </div>
+     </div>
+     <div class="grid">
+      <div class="cell active">
+       <span>
+        7 pm
+       </span>
+      </div>
+      <div class="cell">
+       <span>
+        6 pm
+       </span>
+      </div>
+      <div class="cell">
+       <span>
+        5 pm
+       </span>
+      </div>
+      <div class="cell">
+       <span>
+        4 pm
+       </span>
+      </div>
+      <div class="cell">
+       <span>
+        3 pm
+       </span>
+      </div>
+      <div class="cell">
+       <span>
+        2 pm
+       </span>
+      </div>
+      <div class="cell">
+       <span>
+        1 pm
+       </span>
+      </div>
+      <div class="cell">
+       <span>
+        12 pm
+       </span>
+      </div>
+      <div class="cell">
+       <span>
+        11 am
+       </span>
+      </div>
+      <div class="cell">
+       <span>
+        10 am
+       </span>
+      </div>
+      <div class="cell">
+       <span>
+        9 am
+       </span>
+      </div>
+      <div class="cell">
+       <span>
+        8 am
+       </span>
+      </div>
+     </div>
+    </div>
+    <div class="stats">
+     <div class="item">
+      <div class="value">
+       10 140
+      </div>
+      <div class="label">
+       Active
+      </div>
+     </div>
+     <div class="item">
+      <div class="value">
+       8912
+      </div>
+      <div class="label">
+       Inactive
+      </div>
+     </div>
+     <div class="item">
+      <div class="value">
+       634
+      </div>
+      <div class="label">
+       Templates
+      </div>
+     </div>
+    </div>
+    <div class="pie-chart">
+     <img alt="Pie chart showing distribution of listings" src="https://placehold.co/300x300"/>
+    </div>
+    <div class="details">
+     <div class="item">
+      <div class="value">
+       7 300
+      </div>
+      <div class="label">
+       Clear
+      </div>
+     </div>
+     <div class="item">
+      <div class="value">
+       2 840
+      </div>
+      <div class="label">
+       With errors
+      </div>
+     </div>
+    </div>
+   </div>
+  </div>
+ </body>
+</html>

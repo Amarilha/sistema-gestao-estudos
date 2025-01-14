@@ -1,0 +1,94 @@
+/*Dashboard */
+
+body {
+    margin: 0;
+    font-family: Arial, sans-serif;
+    display: flex;
+    height: 100vh;
+}
+
+.sidebar {
+    width: 250px;
+    background-color: #333;
+    color: white;
+    padding: 20px;
+    box-sizing: border-box;
+}
+
+.sidebar img {
+    border-radius: 50%;
+    width: 30px;
+    height: 30px;
+}
+
+.sidebar .user-info {
+    display: flex;
+    align-items: center;
+    margin-bottom: 20px;
+}
+
+.sidebar .user-info span {
+    margin-left: 10px;
+}
+
+.sidebar .menu-item {
+    display: flex;
+    align-items: center;
+    padding: 10px 0;
+    cursor: pointer;
+}
+
+.sidebar .menu-item i {
+    margin-right: 10px;
+}
+
+.sidebar .menu-item.active {
+    background-color: #0056b3;
+}
+
+.sidebar .menu-item:hover {
+    background-color: #444;
+}
+
+.sidebar .menu-item.active:hover {
+    background-color: #0056b3;
+}
+
+.sidebar .menu-item span {
+    flex-grow: 1;
+}
+
+.sidebar .projects {
+    margin-top: 20px;
+}
+
+.sidebar .projects span {
+    font-size: 14px;
+    color: #aaa;
+}
+
+.content {
+    flex-grow: 1;
+    padding: 20px;
+    box-sizing: border-box;
+}
+
+.content h1 {
+    color: #007bff;
+    font-size: 24px;
+}
+
+.task-list {
+    list-style: none;
+    padding: 0;
+}
+
+.task-list li {
+    display: flex;
+    align-items: center;
+    margin-bottom: 10px;
+}
+
+.task-list li input {
+    margin-right: 10px;
+}
