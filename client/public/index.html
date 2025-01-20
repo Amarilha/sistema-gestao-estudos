@@ -4,7 +4,9 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Login Page</title>
     <link rel="stylesheet" href="styles/styles.css">
-    <script src="js/auth.js" defer></script>
+
+   
+    
 </head>
 <body>
     <div class="login-container">
@@ -26,5 +28,30 @@
         </form>
         <a href="#">Criar uma conta</a>
     </div>
+    <script type="module" src="js/auth.js" defer></script>
+    <script src="https://www.gstatic.com/firebasejs/11.2.0/firebase-app-compat.js" ></script>
+    <script src="https://www.gstatic.com/firebasejs/11.2.0/firebase-auth-compat.js" ></script>
+    <script>
+         const firebaseConfig = {
+    apiKey: "AIzaSyAeC9_22GqZt-s80gW0xcWLyguhEWvdnw4",
+    authDomain: "sdge-f4d9d.firebaseapp.com",
+    projectId: "sdge-f4d9d",
+    storageBucket: "sdge-f4d9d.firebasestorage.app",
+    messagingSenderId: "77651645333",
+    appId: "1:77651645333:web:6911a17f0de1d048b99c9c",
+    measurementId: "G-7BWQ9BPNZT"
+    };
+
+    // Initialize Firebase
+    firebase.initializeApp(firebaseConfig);
+
+    console.log('antes');
+    firebase.auth().signInWithEmailAndPassword("igoramarilha23@gmail.com", "amarilha23").then(response => {
+        console.log('success', response)
+    }).catch(error =>{
+        console.log('error', error)
+    });
+    console.log('depois');
+    </script>
 </body>
 </html>
