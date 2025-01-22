@@ -38,3 +38,8 @@ function login() {
             console.log(errorCode, errorMessage);
         });
 }
+
+// cadastro do usuario
+function cadastrar() {
+
+}
