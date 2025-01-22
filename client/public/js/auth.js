@@ -25,7 +25,7 @@ function login() {
     auth.signInWithEmailAndPassword(email, password)
         .then((userCredential) => {
             // Signed in 
-            // alert("logado com sucesso");
+            alert("logado com sucesso");
             // const user = userCredential.user;
             // document.getElementById("user-email").textContent = user.email;
             // toggleAuthState(true);
