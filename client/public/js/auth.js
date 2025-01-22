@@ -41,5 +41,20 @@ function login() {
 
 // cadastro do usuario
 function cadastrar() {
-
+    console.log("cadastrar");
+    const email = document.getElementById("cadastro-email").value;
+    const password = document.getElementById("cadastro-password").value;
+    
+    auth.createUserWithEmailAndPassword(email, password)
+        .then((userCredential)=>{
+            alert("usuario cadastrado com sucesso");
+            console.log(userCredential.user);
+        })
+        .catch((error) => {
+            alert(`Erro ao cadastrar: ${error.message}`);
+            const errorCode = error.code;
+            const errorMessage = error.message;
+            console.log(errorCode, errorMessage);
+        });
+    console.log("cadastrar fim");
 }
