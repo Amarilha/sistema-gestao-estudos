@@ -1,63 +1,348 @@
-<!DOCTYPE html>
-<html lang="pt-BR">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Task Manager</title>
-    <link rel="stylesheet" href="styles/Stylesdashboard.css">
-</head>
-<body>
-    <div class="sidebar">
-        <div class="user-info">
-            <img alt="User  profile picture" src="https://placehold.co/30x30"/>
-            <span>igor</span>
-            <i class="fas fa-chevron-down"></i>
-        </div>
-        <div class="menu-item">
-            <i class="fas fa-plus"></i>
-            <span>Adicionar tarefa</span>
-        </div>
-        <div class="menu-item">
-            <i class="fas fa-search"></i>
-            <span>Buscar</span>
-        </div>
-        <div class="menu-item active">
-            <i class="fas fa-inbox"></i>
-            <span>Entrada</span>
-        </div>
-        <div class="menu-item">
-            <i class="fas fa-calendar-day"></i>
-            <span>Hoje</span>
-        </div>
-        <div class="menu-item">
-            <i class="fas fa-clock"></i>
-            <span>Em breve</span>
-        </div>
-        <div class="menu-item">
-            <i class="fas fa-check"></i>
-            <span>Concluído</span>
-        </div>
-        <div class="projects">
-            <span>Meus projetos</span>
-            <i class="fas fa-plus"></i>
-        </div>
+<html lang="en">
+ <head>
+  <meta charset="utf-8"/>
+  <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+  <title>
+   Task Manager
+  </title>
+  <script src="https://cdn.tailwindcss.com">
+  </script>
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" rel="stylesheet"/>
+ </head>
+ <body class="bg-gray-900 text-white font-sans">
+  <div class="flex h-screen">
+   <!-- Sidebar -->
+   <div class="w-64 bg-gray-800 p-4 flex flex-col">
+    <div class="flex items-center mb-6">
+     <img alt="User avatar" class="rounded-full mr-2" height="40" src="https://storage.googleapis.com/a1aa/image/KPgqpoOrhEi5K7G2xLBlMPuoN6wBNaUeCWpZNoxYD1E.jpg" width="40"/>
+     <span>
+      igor
+     </span>
     </div>
-    <div class="content">
-        <h1>Entrada</h1>
-        <ul class="task-list">
-            <li>
-                <input type="checkbox"/>
-                <span>Materia</span>
-            </li>
-            <li>
-                <input type="checkbox"/>
-                <span>Materia</span>
-            </li>
-            <li>
-                <input type="checkbox"/>
-                <span>Materia</span>
-            </li>
-        </ul>
+    <button class="bg-red-600 text-white py-2 px-4 rounded mb-4">
+     Adicionar tarefa
+    </button>
+    <input class="bg-gray-700 text-white py-2 px-4 rounded mb-4" placeholder="Buscar" type="text"/>
+    <nav class="flex-1">
+     <ul>
+      <li class="mb-2">
+       <a class="flex items-center text-red-500" href="#">
+        <i class="fas fa-inbox mr-2">
+        </i>
+        Entrada
+        <span class="ml-auto bg-red-500 text-white rounded-full px-2">
+         21
+        </span>
+       </a>
+      </li>
+      <li class="mb-2">
+       <a class="flex items-center text-gray-400" href="#">
+        <i class="fas fa-calendar-day mr-2">
+        </i>
+        Hoje
+       </a>
+      </li>
+      <li class="mb-2">
+       <a class="flex items-center text-gray-400" href="#">
+        <i class="fas fa-clock mr-2">
+        </i>
+        Em breve
+       </a>
+      </li>
+      <li class="mb-2">
+       <a class="flex items-center text-gray-400" href="#">
+        <i class="fas fa-filter mr-2">
+        </i>
+        Filtros e Etiquetas
+       </a>
+      </li>
+      <li class="mb-2">
+       <a class="flex items-center text-gray-400" href="#">
+        <i class="fas fa-check mr-2">
+        </i>
+        Concluído
+       </a>
+      </li>
+     </ul>
+    </nav>
+    <div>
+     <h2 class="text-gray-400 mb-2">
+      Meus projetos
+      <span class="text-xs text-gray-500">
+       USADO: 5/5
+      </span>
+     </h2>
+     <ul>
+      <li class="mb-2">
+       <a class="flex items-center text-blue-500" href="#">
+        <i class="fas fa-hashtag mr-2">
+        </i>
+        Estudos
+        <span class="ml-auto text-gray-500">
+         6
+        </span>
+       </a>
+      </li>
+      <li class="mb-2">
+       <a class="flex items-center text-purple-500" href="#">
+        <i class="fas fa-hashtag mr-2">
+        </i>
+        Execícios
+        <span class="ml-auto text-gray-500">
+         5
+        </span>
+       </a>
+      </li>
+      <li class="mb-2">
+       <a class="flex items-center text-purple-500" href="#">
+        <i class="fas fa-hashtag mr-2">
+        </i>
+        Projetos
+        <span class="ml-auto text-gray-500">
+         15
+        </span>
+       </a>
+      </li>
+      <li class="mb-2">
+       <a class="flex items-center text-purple-500" href="#">
+        <i class="fas fa-hashtag mr-2">
+        </i>
+        Buy
+        <span class="ml-auto text-gray-500">
+         12
+        </span>
+       </a>
+      </li>
+      <li class="mb-2">
+       <a class="flex items-center text-purple-500" href="#">
+        <i class="fas fa-hashtag mr-2">
+        </i>
+        Fluxo de desenvolvimento
+        <span class="ml-auto text-gray-500">
+         3
+        </span>
+       </a>
+      </li>
+     </ul>
     </div>
-</body>
+    <div class="mt-auto">
+     <a class="text-gray-400 flex items-center" href="#">
+      <i class="fas fa-gem mr-2">
+      </i>
+      Navegar pelos modelos
+     </a>
+    </div>
+   </div>
+   <!-- Main Content -->
+   <div class="flex-1 p-6 overflow-y-auto">
+    <div class="flex justify-between items-center mb-6">
+     <h1 class="text-2xl font-bold">
+      Entrada
+     </h1>
+     <div class="flex items-center">
+      <button class="text-gray-400 mr-4">
+       <i class="fas fa-sliders-h">
+       </i>
+       Visualizar
+      </button>
+      <button class="text-gray-400">
+       <i class="fas fa-ellipsis-h">
+       </i>
+      </button>
+     </div>
+    </div>
+    <ul>
+     <li class="mb-4">
+      <div class="flex items-center">
+       <input class="mr-2" type="radio"/>
+       <div>
+        <p class="text-red-500">
+         Fazer um plano se carreira de 1 ano na área tec
+        </p>
+        <p class="text-gray-400 text-sm">
+         ver qual área que eu vou atuar 100% online ou híbrido
+        </p>
+       </div>
+      </div>
+     </li>
+     <li class="mb-4">
+      <div class="flex items-center">
+       <input class="mr-2" type="radio"/>
+       <div>
+        <p class="text-blue-500">
+         Ler o manual do skrooge
+        </p>
+        <a class="text-gray-400 text-sm" href="https://docs.kde.org/trunk5/pt_BR/skrooge/skrooge/skrooge.pdf">
+         https://docs.kde.org/trunk5/pt_BR/skrooge/skrooge/skrooge.pdf
+        </a>
+       </div>
+      </div>
+     </li>
+     <li class="mb-4">
+      <div class="flex items-center">
+       <input class="mr-2" type="checkbox"/>
+       <div>
+        <p>
+         Pesquisar
+        </p>
+        <p class="text-gray-400 text-sm">
+         Olha estágio e ver as habilidades que eu tenho q evoluir
+        </p>
+        <p class="text-gray-400 text-sm">
+         🔄3/7
+        </p>
+       </div>
+      </div>
+     </li>
+     <li class="mb-4">
+      <div class="flex items-center">
+       <input class="mr-2" type="radio"/>
+       <div>
+        <p>
+         colocar no trello
+        </p>
+        <p class="text-gray-400 text-sm">
+         Como engenheiro de software, você tem várias oportunidades para ganhar dinheiro extra. Aqui estão algumas opções: 1. Freelancing...
+        </p>
+       </div>
+      </div>
+     </li>
+     <li class="mb-4">
+      <div class="flex items-center">
+       <input class="mr-2" type="radio"/>
+       <div>
+        <p>
+         Fazer um site Scooby-Doo de service para o portfólio
+        </p>
+       </div>
+      </div>
+     </li>
+     <li class="mb-4">
+      <div class="flex items-center">
+       <input class="mr-2" type="checkbox"/>
+       <div>
+        <p>
+         Procura livro
+        </p>
+        <p class="text-gray-400 text-sm">
+         🔄0/2
+        </p>
+       </div>
+      </div>
+      <ul class="ml-6">
+       <li class="mb-4">
+        <div class="flex items-center">
+         <input class="mr-2" type="radio"/>
+         <div>
+          <p>
+           Como escrever e ilustrar um artigo científico
+          </p>
+         </div>
+        </div>
+       </li>
+       <li class="mb-4">
+        <div class="flex items-center">
+         <input class="mr-2" type="radio"/>
+         <div>
+          <p>
+           Como escrever artigos científicos
+          </p>
+         </div>
+        </div>
+       </li>
+      </ul>
+     </li>
+     <li class="mb-4">
+      <div class="flex items-center">
+       <input class="mr-2" type="radio"/>
+       <div>
+        <p>
+         Nosferatu
+        </p>
+        <p class="text-gray-400 text-sm">
+         Assistir o filme
+        </p>
+       </div>
+      </div>
+     </li>
+     <li class="mb-4">
+      <div class="flex items-center">
+       <input class="mr-2" type="radio"/>
+       <div>
+        <p>
+         Existe algum impedimento?
+        </p>
+       </div>
+      </div>
+     </li>
+     <li class="mb-4">
+      <div class="flex items-center">
+       <input class="mr-2" type="radio"/>
+       <div>
+        <p>
+         Trello: Sistema de projetos de estudos
+        </p>
+       </div>
+      </div>
+     </li>
+     <li class="mb-4">
+      <div class="flex items-center">
+       <input class="mr-2" type="radio"/>
+       <div>
+        <p class="text-red-500">
+         As inscrições para o Concurso da Escola de Sargentos das Armas (ESA)
+        </p>
+        <p class="text-gray-400 text-sm">
+         <i class="fas fa-calendar-day">
+         </i>
+         Mar 31
+        </p>
+       </div>
+      </div>
+     </li>
+     <li class="mb-4">
+      <div class="flex items-center">
+       <input class="mr-2" type="radio"/>
+       <div>
+        <p class="text-yellow-500">
+         Compra no mercado
+        </p>
+        <p class="text-gray-400 text-sm">
+         Aqui está uma lista de compras para preparar o hipercalórico caseiro por um mês (30 dias), considerando que você usará 200 g por di...
+        </p>
+       </div>
+      </div>
+     </li>
+     <li class="mb-4">
+      <div class="flex items-center">
+       <input class="mr-2" type="radio"/>
+       <div>
+        <p>
+         Roadmap C#
+        </p>
+        <p class="text-gray-400 text-sm">
+         coloca no obsl.
+        </p>
+       </div>
+      </div>
+     </li>
+     <li class="mb-4">
+      <div class="flex items-center">
+       <input class="mr-2" type="radio"/>
+       <div>
+        <p>
+         Estuda Pico de emoção
+        </p>
+        <p class="text-gray-400 text-sm">
+         <i class="fas fa-comment">
+         </i>
+         1
+        </p>
+       </div>
+      </div>
+     </li>
+    </ul>
+   </div>
+  </div>
+ </body>
 </html>
