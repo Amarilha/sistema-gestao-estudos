@@ -1,4 +1,4 @@
-import {auth, createUserWithEmailAndPassword} from "./firebaseConfig.js";
+import {auth, createUserWithEmailAndPassword,GoogleAuthProvider,provider,signInWithPopup } from "./firebaseConfig.js";
 
 
 
@@ -48,29 +48,22 @@ cadastroButoon.addEventListener("click", function(event) {
 });
 
 // Google
-function handleCredentialResponse(response) {
-  const data = jwt_decode(response.credential);
-  console.log(data);
-}
-window.onload = function () {
-  google.accounts.id.initialize({
-    client_id: "77651645333-p2gq435d1emoc6e13pgcddpbjfta2ik4.apps.googleusercontent.com",
-    callback: handleCredentialResponse
+const googleButton = document.getElementById('googleDiv');
+googleButton.addEventListener("click", function(event) {
+  signInWithPopup(auth, provider)
+  .then((result) => {
+    // This gives you a Google Access Token. You can use it to access the Google API.
+    const credential = GoogleAuthProvider.credentialFromResult(result);
+    const user = result.user;
+    window.location.href = "dashboard2.html";
+
+  }).catch((error) => {
+    // Handle Errors here.
+    const errorCode = error.code;
+    const errorMessage = error.message;
+    // ...
   });
-  google.accounts.id.renderButton(
-    document.getElementById("googleDiv"),
-    { client_id:"s",
-      context:"signup",
-      ux_mode:"popup",
-      login_uri:"s",
-      auto_prompt:"false",
-      type:"icon",
-      shape:"circle",
-      theme:"outline",
-      text:"signup_with",
-      size:"big",  
+
 });
-  google.accounts.id.prompt(); // also display the One Tap dialog
-}
 
 // Microsoft
