@@ -1,4 +1,5 @@
-import {auth, createUserWithEmailAndPassword} from "./firebaseConfig.js";
+import {auth, createUserWithEmailAndPassword,GoogleAuthProvider,provider,signInWithPopup,providerMicrosoft,OAuthProvider } from "./firebaseConfig.js";
+
 
 
 const cadastroButoon = document.getElementById('cadastrar');
@@ -44,4 +45,45 @@ cadastroButoon.addEventListener("click", function(event) {
     // cor da mensagem
     document.getElementById('mensagem').style.color = 'red';
     }
+});
+
+// Google
+const googleButton = document.getElementById('googleDiv');
+googleButton.addEventListener("click", function(event) {
+  signInWithPopup(auth, provider)
+  .then((result) => {
+    // This gives you a Google Access Token. You can use it to access the Google API.
+    const credential = GoogleAuthProvider.credentialFromResult(result);
+    const user = result.user;
+    window.location.href = "dashboard2.html";
+
+  }).catch((error) => {
+    // Handle Errors here.
+    const errorCode = error.code;
+    const errorMessage = error.message;
+    // ...
+  });
+
+});
+
+// Microsoft
+const MicrosoftButton = document.getElementById('microsoftDiv');
+MicrosoftButton.addEventListener("click", function(event) {
+  signInWithPopup(auth, providerMicrosoft)
+  .then((result) => {
+    console.log(result);
+    // This gives you a Google Access Token. You can use it to access the Google API.
+    const credential = OAuthProvider.credentialFromResult(result);
+    const user = result.user;
+    window.location.href = "dashboard2.html";
+
+    
+
+  }).catch((error) => {
+    // Handle Errors here.
+    const errorCode = error.code;
+    const errorMessage = error.message;
+    // ...
+  });
+
 });
