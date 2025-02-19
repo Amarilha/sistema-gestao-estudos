@@ -1,4 +1,4 @@
-import { auth,signInWithEmailAndPassword,GoogleAuthProvider,provider,signInWithPopup,providerMicrosoft } from "./firebaseConfig.js";
+import { auth,signInWithEmailAndPassword,GoogleAuthProvider,provider,signInWithPopup,providerMicrosoft,OAuthProvider } from "./firebaseConfig.js";
 
 //submit button
 const submitButton = document.getElementById('login-button');

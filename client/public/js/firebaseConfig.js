@@ -19,4 +19,4 @@ const provider = new GoogleAuthProvider();
 const providerMicrosoft = new OAuthProvider('microsoft.com')
 
 
-export { app, auth,signInWithEmailAndPassword,createUserWithEmailAndPassword,GoogleAuthProvider,provider,signInWithPopup,providerMicrosoft };
+export { app, auth,signInWithEmailAndPassword,createUserWithEmailAndPassword,GoogleAuthProvider,provider,signInWithPopup,providerMicrosoft,OAuthProvider };
