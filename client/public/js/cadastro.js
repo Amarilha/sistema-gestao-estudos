@@ -1,4 +1,4 @@
-import {auth, createUserWithEmailAndPassword,GoogleAuthProvider,provider,signInWithPopup } from "./firebaseConfig.js";
+import {auth, createUserWithEmailAndPassword,GoogleAuthProvider,provider,signInWithPopup,providerMicrosoft } from "./firebaseConfig.js";
 
 
 
@@ -67,3 +67,20 @@ googleButton.addEventListener("click", function(event) {
 });
 
 // Microsoft
+const MicrosoftButton = document.getElementById('microsoftDiv');
+MicrosoftButton.addEventListener("click", function(event) {
+  signInWithPopup(auth, providerMicrosoft)
+  .then((result) => {
+    // This gives you a Google Access Token. You can use it to access the Google API.
+    const credential = OAuthProvider.credentialFromResult(result);
+    const user = result.user;
+    window.location.href = "dashboard2.html";
+
+  }).catch((error) => {
+    // Handle Errors here.
+    const errorCode = error.code;
+    const errorMessage = error.message;
+    // ...
+  });
+
+});
