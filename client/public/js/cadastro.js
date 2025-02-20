@@ -37,6 +37,13 @@ cadastroButoon.addEventListener("click", function(event) {
         const errorCode = error.code;
         const errorMessage = error.message;
         // ..
+         // Exibe a mensagem de sucesso
+        document.getElementById('mensagem').textContent = 'A senha deve ter no mínimo 8 caracteres, incluindo pelo menos uma letra maiúscula, uma letra minúscula, um número e um caractere especial para garantir mais segurança';
+        // cor da mensagem
+        document.getElementById('mensagem').style.color = 'red';
+
+        // Opcional: Focar no campo de email após o cadastro
+        document.getElementById('cadastroemail').focus();
       });
     }else{
       
